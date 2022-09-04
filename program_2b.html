@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAM - 2b</title>
+    <style>
+        body{
+            background-image: url(https://happycoding.io/tutorials/java/images/eclipse-9.png);
+            background-repeat: no-repeat;
+            background-size: 1536px 746px;
+            margin-left: 450px;
+            margin-top: 108px;
+        }
+    </style>
+</head>
+<body>
+    <div class="program1a">
+        <textarea name="himams" id="" cols="101" rows="29">
+import java.util.Scanner;
+import java.util.StringTokenizer; 
+class customer
+{
+String name; 
+String date; 
+public void read()
+{
+Scanner input =new Scanner(System.in); 
+name=input.next();
+date=input.next();
+}
+public void display()
+{
+System.out.print(name+","); 
+String delims="/";
+StringTokenizer st=new StringTokenizer(date,delims); 
+while(st.hasMoreElements()){
+System.out.print(st.nextElement()+",");
+}
+System.out.println();
+}
+public static void main(String[] args)
+{
+System.out.println("Enter the customer detail"); 
+customer[] cus=new customer[30];
+Scanner sc =new Scanner(System.in);
+System.out.print("enter the number of customer "); 
+int n=sc.nextInt();
+for(int i=0;i<n;i++)
+{
+cus[i]=new customer(); 
+cus[i].read();
+}
+for(int i=0;i<n;i++) 
+cus[i].display();
+}
+}
+            
+
+
+
+
+
+
+
+
+
+
+
+Output:
+Enter the customer detail 
+enter the number of customer 2
+Enter the customer name and date 
+monika
+12/2/2017 
+gowda 
+11/4/2017
+monika,12,2,2017,
+gowda,11,4,2017,
+        </textarea>
+    </div>
+</body>
+</html>

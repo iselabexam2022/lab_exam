@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAM - 3a</title>
+    <style>
+        body{
+            background-image: url(https://happycoding.io/tutorials/java/images/eclipse-9.png);
+            background-repeat: no-repeat;
+            background-size: 1536px 746px;
+            margin-left: 450px;
+            margin-top: 108px;
+        }
+    </style>
+</head>
+<body>
+    <div class="program1a">
+        <textarea name="himams" id="" cols="101" rows="29">
+import java.util.Scanner;
+class division
+{
+public static void main(String[] args)
+{
+int a,b,result;
+Scanner input =new Scanner(System.in); 
+System.out.println("Input two integers"); 
+a=input.nextInt();
+b=input.nextInt(); 
+try
+{
+result=a/b; 
+System.out.println("Result = "+result);
+}
+catch(ArithmeticException e)
+{
+System.out.println("exception caught: Divide by zeroerror"+e);
+}
+}
+}
+            
+
+
+
+
+
+
+
+
+
+
+
+Output:
+Input two integers 
+6 2
+Result = 3
+Input two integers 
+3 0
+exception caught: Divide by zero errorjava.lang.ArithmeticException: / 
+by zero
+        </textarea>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAM - 3b</title>
+    <style>
+        body{
+            background-image: url(https://happycoding.io/tutorials/java/images/eclipse-9.png);
+            background-repeat: no-repeat;
+            background-size: 1536px 746px;
+            margin-left: 450px;
+            margin-top: 108px;
+        }
+    </style>
+</head>
+<body>
+    <div class="program1a">
+        <textarea name="himams" id="" cols="101" rows="29">
+import java.util.*;
+class second implements Runnable
+{
+public int x;
+public second (int x)
+{
+this.x=x;
+}
+public void run()
+{
+System.out.println("Second thread:Square of the number is"+x*x);
+}
+}
+class third implements Runnable
+{
+public int x;
+public third(int x)
+{
+this.x=x;
+}
+public void run()
+{
+System.out.println("third thread:Cube of the number is"+x*x*x);
+}
+}
+class first extends Thread
+{
+public void run()
+{
+int num=0;
+Random r=new Random(); 
+try
+{
+for(int i=0;i<5;i++)
+{
+num=r.nextInt(100);
+System.out.println("first thread generated number is"+num);
+Thread t2=new Thread (new second(num)); 
+t2.start();
+Thread t3=new Thread(new third(num)); 
+t3.start();
+Thread.sleep(1000);
+}
+}
+catch(Exception e)
+{
+System.out.println(e.getMessage());
+}
+}
+}
+public class multithread
+{ 
+public static void main(String args[])
+{
+first a=new first(); 
+a.start();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+Output:
+first thread generated number is 65
+Second thread:Square of the number is4225 
+third thread:Cube of the number is 274625 
+first thread generated number is 33
+Second thread:Square of the number is 1089 
+third thread:Cube of the number is 35937 
+first thread generated number is 30
+Second thread:Square of the number is 900 
+third thread:Cube of the number is 27000 
+first thread generated number is 29 
+Second thread:Square of the number is 841 
+third thread:Cube of the number is 24389 
+first thread generated number is 93
+Second thread:Square of the number is 8649 
+third thread:Cube of the number is 804357
+        </textarea>
+    </div>
+</body>
+</html>
